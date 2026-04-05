@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --border: #e2e8f0;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --success: #1ECCA2;
+    --destructive: #F8436B;
+  }
+
+  /* Zorvyn Fintech Aesthetic Default Dark Theme */
+  .dark {
+    --background: #0B0F19;
+    --foreground: #F8FAFC;
+    --card: #131A2A;
+    --card-foreground: #F8FAFC;
+    --border: #1F293E;
+    --primary: #447EF2;
+    --primary-foreground: #ffffff;
+    --success: #1ECCA2;
+    --destructive: #EC4899;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground;
+  }
+
+  /* Grid pattern for the premium Zorvyn look (only in dark mode usually) */
+  .dark body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* HTML Smooth Scrolling for Sidenav */
+  html {
+    scroll-behavior: smooth;
+  }
+}
