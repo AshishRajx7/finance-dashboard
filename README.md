@@ -1,73 +1,190 @@
-# React + TypeScript + Vite
+# Finance Dashboard UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and interactive finance dashboard designed to help users track, analyze, and understand their financial activity through a clean and intuitive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+https://your-vercel-link.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Repository
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+https://github.com/AshishRajx7/finance-dashboard
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Overview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+This project is a frontend-only finance dashboard built as part of an assignment. It focuses on UI clarity, structured state management, and meaningful data visualization.
+
+The dashboard is designed to communicate financial information within seconds using a top-down hierarchy:
+
+- Summary
+- Trends
+- Detailed transactions
+- Insights
+
+---
+
+## Features
+
+### Dashboard Overview
+
+- Total balance displayed in a card-style layout
+- Income and expenses summary
+- Balance trend visualization over time
+- Spending breakdown by category
+
+---
+
+### Transactions
+
+- Displays transactions with:
+  - Date
+  - Description
+  - Category
+  - Amount
+  - Type (income or expense)
+
+- Includes:
+  - Search functionality
+  - Filtering by transaction type
+  - Sorting by date
+  - Add, edit, and delete actions (admin role)
+  - Export data as CSV and JSON
+
+---
+
+### Role-Based UI (Simulated)
+
+- Viewer:
+  - Can view data only
+
+- Admin:
+  - Can add, edit, and delete transactions
+
+Role switching is handled on the frontend for demonstration purposes.
+
+---
+
+### Calendar Integration
+
+- Monthly calendar with spending indicators
+- Color-coded daily spending:
+  - Low
+  - Medium
+  - High
+- Clicking a date filters transactions for that day
+
+---
+
+### Insights
+
+- Highest spending category
+- Most frequent category
+- Monthly comparison
+- Highest spending day
+- Average daily spending
+
+Insights are computed dynamically from transaction data.
+
+---
+
+### Invoices
+
+- Displays recent invoices with status:
+  - Paid
+  - Pending
+  - Unpaid
+
+- Actions:
+  - Mark individual invoice as paid
+  - Settle all invoices
+
+---
+
+## Tech Stack
+
+- React with TypeScript (Vite)
+- Tailwind CSS
+- Zustand for state management
+- Recharts for data visualization
+- Framer Motion for animations
+- Lucide React for icons
+- date-fns for date handling
+
+---
+
+## State Management
+
+The application uses Zustand as a centralized state store.
+
+Key states include:
+
+- Transactions data
+- Filters (search, type, date)
+- Selected role (admin or viewer)
+- Selected date and month
+
+All derived values such as totals, charts, and insights are computed from this single source of truth.
+
+State is persisted using localStorage.
+
+---
+
+## Design and UX
+
+- Clean and minimal interface
+- Consistent spacing system
+- Responsive layout across screen sizes
+- Subtle animations for interaction feedback
+- Handles empty and filtered states gracefully
+
+---
+
+## Setup Instructions
 ```
+Clone the repository:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+git clone https://github.com/AshishRajx7/finance-dashboard.git
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Navigate into the project:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+cd dashboard
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
+npm run dev
+Build
+
+To create a production build:
+
+npm run build
+Deployment
 ```
+The project is deployed using Vercel.
+
+Future Improvements
+Backend integration with API
+Authentication and user accounts
+Budget tracking features
+Advanced analytics and reporting
+Multi-user support
+Purpose
+
+This project was built to demonstrate:
+
+Frontend architecture and component design
+State management using Zustand
+Data-driven UI development
+Practical product thinking
+Contact
+
+GitHub: https://github.com/AshishRajx7
