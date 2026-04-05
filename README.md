@@ -6,7 +6,7 @@ A modern and interactive finance dashboard designed to help users track, analyze
 
 ## Live Demo
 
-https://your-vercel-link.vercel.app
+https://finance-dashboard-ten-henna.vercel.app/
 
 ---
 
